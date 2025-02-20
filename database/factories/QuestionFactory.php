@@ -21,7 +21,7 @@ class QuestionFactory extends Factory
     {
         return [
             'survey_id' => Survey::factory(),
-            'title' => fake()->words(rand(5, 10), true).'?',
+            'title' => substr(fake()->realTextBetween(12, 45), 0, -1).'?',
             'type' => fake()->randomElement(['radio', 'checkbox']),
             'display_order' => self::$order++,
         ];

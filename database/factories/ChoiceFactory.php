@@ -19,7 +19,8 @@ class ChoiceFactory extends Factory
     {
         return [
             'value' => fake()->word(),
-            'label' => fake()->words(rand(1, 10), true),
+            // 'label' => fake()->words(rand(1, 10), true),
+            'label' => fake()->realTextBetween(5, 20),
             'question_id' => Question::factory(),
         ];
     }

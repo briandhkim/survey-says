@@ -17,7 +17,7 @@ class SurveyFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->words(rand(3, 6), true),
+            'title' => fake()->realTextBetween(10, 30),
         ];
     }
 }

@@ -19,14 +19,18 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@test.com',
+            'password' => '!Tester1',
+        ]);
 
         DB::insert(
-            'insert into surveys (title) values (:title)',
-            ['title' => 'Step 1 survey']
+            'insert into surveys (title, created_at, updated_at) values (:title, :created_at, :updated_at)',
+            ['title' => 'Step 1 survey',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
         );
 
         $this->seedStepOneQuestions();
