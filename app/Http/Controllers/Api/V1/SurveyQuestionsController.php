@@ -41,7 +41,7 @@ class SurveyQuestionsController extends Controller
 
         $question = $survey->questions()->create($validated);
 
-        return to_route('survey.question.show', ['survey' => $survey, 'question' => $question]);
+        return to_route('api.v1.survey.question.show', ['survey' => $survey, 'question' => $question]);
     }
 
     /**
@@ -76,7 +76,7 @@ class SurveyQuestionsController extends Controller
 
         $question->update($validated);
 
-        return to_route('survey.question.show', ['survey' => $survey, 'question' => $question]);
+        return to_route('api.v1.survey.question.show', ['survey' => $survey, 'question' => $question]);
     }
 
     /**
